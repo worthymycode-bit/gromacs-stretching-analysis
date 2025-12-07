@@ -1,0 +1,36 @@
+integrator = md
+dt = 0.002
+nsteps = 50000
+comm-mode = Linear
+
+tcoupl = v-rescale
+tc-grps = System
+tau-t = 0.1
+ref-t = 300
+
+pull = yes
+pull-nstxout = 100
+pull-nstfout = 100
+pull-ngroups = 2
+pull-group1-name = Protein-N
+pull-group2-name = Protein-C
+pull-coord1-type = umbrella
+pull-coord1-geometry = distance
+pull-coord1-groups = 1 2
+pull-coord1-rate = 0.01
+pull-coord1-init = 0
+pull-coord1-k = 1000
+pull-pbc-ref-prev-step-com = yes
+pull-group1-pbc-atom = 1
+pull-group2-pbc-atom = 1
+
+nstxout = 500
+nstvout = 500
+nstenergy = 500
+nstlog = 500
+energygrps = System
+
+rlist = 0.7
+coulombtype = PME
+rcoulomb = 0.7
+rvdw = 0.7
