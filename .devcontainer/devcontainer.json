@@ -2,9 +2,5 @@
   "name": "GROMACS Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "postCreateCommand": "sudo apt update && sudo apt install -y cmake build-essential libx11-dev libxext-dev wget && wget https://ftp.gromacs.org/pub/gromacs/gromacs-2023.3.tar.gz && tar xfz gromacs-2023.3.tar.gz && cd gromacs-2023.3 && mkdir build && cd build && cmake .. -DGMX_BUILD_OWN_FFTW=ON -DCMAKE_INSTALL_PREFIX=/usr/local/gromacs && make -j4 && sudo make install && echo 'source /usr/local/gromacs/bin/GMXRC' >> ~/.bashrc",
-  "customizations": {
-    "vscode": {
-      "extensions": []
-    }
-  }
+  "customizations": {"vscode": {"extensions": []}}
 }
